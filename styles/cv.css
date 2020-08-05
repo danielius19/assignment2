@@ -76,7 +76,7 @@ nav a:hover::before {
   justify-content: space-between;
   border-radius: 50px;
   padding: 5px;
-  height: 35px;
+  height: 36px;
   width: 60px;
   position: relative;
   left: 200vh;
@@ -109,6 +109,10 @@ nav a:hover::before {
 /*Sets the color of the sun icon*/
 .fa-sun {
   color: #f39c12;
+}
+/*Makes the transition to dark mode more fluent*/
+body {
+  transition: background 0.2s linear;
 }
 /*Sets the color of the background when dark mode is on*/
 body.dark {

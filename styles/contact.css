@@ -69,6 +69,48 @@ nav a::before {
 nav a:hover::before {
   width: 100%;
 }
+/*Creates a bar in which dark mode can be turned on*/
+.label {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    padding: 5px;
+    height: 36px;
+    width: 60px;
+    position: relative;
+    left: 200vh;
+    top: -14px;
+}
+/*Creates a white ball in the label for dark theme*/
+.ball {
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.1s linear;
+}
+/*Creates an invisible checkbox for the dark theme slider*/
+.checkbox {
+    position: relative;
+    left: 195vh;
+    top: 10px;
+    opacity: 0;
+}
+/*Slides the ball when you click on the label*/
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+}
+/*Sets the color of the moon icon*/
+.fa-moon {
+    color: #f1c40f;
+}
+/*Sets the color of the sun icon*/
+.fa-sun {
+    color: #f39c12;
+}
 /*Sets the background of the body*/
 body {
   color:#777;
@@ -77,6 +119,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  transition: background 0.2s linear;
+}
+/*Sets the color of the background when dark mode is on*/
+body.dark {
+    background: #111;
 }
 /*Sets rules for whole page class*/
 .page {
