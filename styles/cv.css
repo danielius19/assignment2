@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Work+Sans:300,400,600&display=swap');
+/* Created all the variables, that I will use in the code */
+:root {
+  --paragraph: #B4BFE3;
+  --title: #97A0BE;
+  --background: #373756;
+  --coverdark: rgba(55,55,86,.9);
+  --coverlight: rgba(55,55,86,.7);
+}
+/* Created the "global" rules for the page not to have any white borders*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*This doesn't let the navigation bar to reach sides of the page*/
+.navigation {
+	width: 80%;
+    margin: 0 auto;
+}
+/*Sets the background of the navigation bar*/
+header {
+  background: #373756;
+  height:40px;
+}
+/*Moves the navigation bar to the right*/
+nav {
+  float: right;
+}
+/*Deletes the empty space around listed items and dots before them*/
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/*Lists items in a row, while putting space in between them and from the top*/
+nav li {
+  display: inline-block;
+  margin-right: 200px;
+  padding-top: 15px;
+  position: relative;
+}
+/*Sets the font, color and the size of the text in nav section  */
+nav a {
+  color: #97A0BE;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+/*Makes the text change its colour in the nav section, when hovering on text*/
+nav a:hover {
+  color: #B4BFE3;
+}
+/*Creates a line above the text in the navigation bar*/
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #97A0BE;
+  position: relative;
+  bottom: 15px;
+  width: 0%;
+  transition: all ease-in-out 200ms;
+}
+/*Makes the line to only appear after hovering on a word in navigation*/
+nav a:hover::before {
+  width: 100%;
+}
+/*Sets rules for the whole html page*/
+html {
+  background-image: linear-gradient(to right, var(--coverdark), var(--coverlight)), url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/*Sets rules for the resume class*/
+div#resume {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 2.2rem;
+  min-width: 310px;
+  line-height: 24px;
+  color: #000
+}
+/*Sets rules for the heading 1 in the resume */
+div#resume h1 {
+  margin: 0 0 16px 0;
+  padding: 0 0 16px 0;
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  border-bottom: 1px solid #97A0BE;
+  line-height: 50px
+}
+/*Sets rules for the heading 2 in the resume */
+div#resume h2 {
+  font-size: 20px;
+  margin: 0 0 6px 0;
+  position: relative
+}
+/*Sets rules for the heading 2 in the resume span section*/
+div#resume h2 span {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 20px;
+  font-style: italic;
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  color: #97A0BE;
+  font-weight: 600
+}
+/*Set rules for the paragraph section in the resume*/
+div#resume p {
+  margin: 0 0 16px 0
+}
+/*Sets rules for the hyperlinks in the resume*/
+div#resume a {
+  color: #97A0BE;
+  text-decoration: none;
+  border-bottom: 1px dotted #97A0BE
+}
+/*Sets rules for the hyperlinks after you hover on them*/
+div#resume a:hover {
+  border-bottom-style: solid;
+  filter: brightness(150%);
+}
+/*Sets rules for info paragraph*/
+div#resume p.info {
+  font-family: "Work Sans", sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  color: #B4BFE3;
+}
+/*Sets rules for the dt elements*/
+div#resume dt {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: right;
+  padding: 0 26px 0 0;
+  width: 150px;
+  border-right: 1px solid #97A0BE;
+}
+/*Sets rules for the dl elements*/
+div#resume dl {
+  display: table-row
+}
+/*Sets rules for the dl dt and dl dd elements*/
+div#resume dl dt,
+div#resume dl dd {
+  display: table-cell;
+  padding-bottom: 20px
+}
+/*Sets rules for the dl dd elements*/
+div#resume dl dd {
+  width: 500px;
+  padding-left: 26px
+}
+/*Sets rules for the images in the resume*/
+div#resume img {
+  float: right;
+  padding: 10px;
+  background: #fff;
+  margin: 0 30px;
+  transform: rotate(-4deg);
+  box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+  width: 30%;
+  max-width: 220px
+}
+/*Rules for smaller screens*/
+@media screen and (max-width:1100px) {
+  div#resume h2 span {
+    position: static;
+    display: block;
+    margin-top: 2px
+  }
+}
+@media screen and (max-width:600px) {
+  nav a {
+    font-size: 16px;
+}
+header {
+    height: 150px;
+    width:375px;
+}
+body {
+    max-width: min-content;
+}
+h1 {
+    position: relative;
+    text-align: center;
+    font-size: 25px;
+}
+
+.navigation {
+    transform: scale(.8);
+    position: relative;
+    left: 19vh;
+    text-align: center;
+    width: 100px;
+  }
+}
+@media screen and (max-width:320px) {
+  body {
+    margin: 0
+  }
+  img {
+    margin: 0;
+    margin-bottom: -40px
+  }
+  div#resume {
+    width: 320px;
+    padding: 12px;
+    overflow: hidden
+  }
+  p,
+  li {
+    margin-right: 20px
+  }
+}

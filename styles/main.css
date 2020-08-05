@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Work+Sans:300,400,600&display=swap');
+/* Created all the variables, that I will use in the code */
+:root {
+    --paragraph: #B4BFE3;
+    --title: #97A0BE;
+    --background: #373756;
+    --coverdark: rgba(55,55,86,.9);
+    --coverlight: rgba(55,55,86,.7);
+    --ease: all 0.3s ease 0s;
+}
+/* Created the "global" rules for the page not to have any white borders*/
+* {
+    padding: 0;
+    margin: 0;
+}
+/*This doesn't let the navigation bar to reach sides of the page*/
+.navigation {
+	width: 80%;
+    margin: 0 auto;
+}
+/*Sets the background of the navigation bar*/
+header {
+  background: var(--background);
+  height: 40px;
+}
+/*Moves the navigation bar to the right*/
+nav {
+  float: right;
+}
+/*Deletes the empty space around listed items and dots before them*/
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/*Lists items in a row, while putting space in between them and from the top*/
+nav li {
+  display: inline-block;
+  margin-right: 200px;
+  padding-top: 15px;
+  position: relative;
+}
+/*Sets the font, color and the size of the text in nav section  */
+nav a {
+  color: var(--title);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+/*Makes the text change its colour in the nav section, when hovering on text*/
+nav a:hover {
+  color: var(--paragraph);
+}
+/*Creates a line above the text in the navigation bar*/
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: var(--title);
+  position: relative;
+  bottom: 15px;
+  width: 0%;
+  transition: all ease-in-out 200ms;
+}
+/*Makes the line to only appear after hovering on a word in navigation*/
+nav a:hover::before {
+  width: 100%;
+}
+
+.label {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    padding: 5px;
+    height: 26px;
+    width: 50px;
+    position: relative;
+    left: 200vh;
+    top: -14px;
+}
+
+.ball {
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.1s linear;
+}
+
+.checkbox {
+    position: relative;
+    left: 195vh;
+    top: 10px;
+    opacity: 0;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+/*Sets the background of the body*/
+body {
+    background-color: var(--background);
+    background-image: linear-gradient(to right, var(--coverdark), var(--coverlight)), url(../images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1001;
+    transition: background 0.2s linear;
+}
+
+body.dark {
+    background: #111;
+}
+/*Sets the colour for the heading 1 and the icons*/
+h1, i {
+    color: var(--paragraph);
+}
+/*Sets the colour for the paragraph and a tags*/
+p, a {
+    color: var(--title);
+    text-decoration: none;
+}
+/*Sets the font, its size and thickness for the heading 1*/
+h1 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 72px;
+    font-weight: 300;
+}
+/*Makes wrapper class to take full size of the screen as well as makes top class to be inside the grid*/
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "top";
+    margin-top: -40px;
+    position: relative;
+    z-index: -1000;
+}
+
+.top {
+    grid-area: top;
+    /*Puts the content inside this class in its places (image and text)*/
+    display: grid;
+    grid-template-columns: 1fr 600px 600px 1fr;
+    grid-gap: 20px;
+    grid-template-areas: ". photo text .";
+}
+/*Centers the text   relatively to the page*/
+.text {
+    grid-area: text;
+    align-self: center;
+    justify-self: center;
+    padding: 10px;
+}
+/*Sets the font, size and thickness for the subtitle class*/
+.subtitle {
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 18;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+/*Creates some space between subtitle class and social links*/
+.name {
+    margin-bottom: 80px;
+}
+
+/*Creates a box for the profile image and positions it properly*/
+.photo {
+    grid-area: photo;
+    align-self: center;
+    justify-self: center;
+    background-image: url(../images/profile.jpg);
+    width: 526px;
+    height: 526px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+}
+/*Initializes flex box*/
+.social {
+    display: flex;
+}
+/*Positions the social items*/
+.social_full {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+/*Positions social items, but excludes the first one*/
+.social_full:not(:first-child) {
+    margin-left: 50px;
+}
+/*Sets the size of the social icons*/
+i{
+    font-size: 25px;
+}
+/*Sets the font rules for the social links*/
+.social_text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 15px;
+    transition: var(--ease);
+}
+/*Makes the social text and icons to brighten after hovering on them*/
+.social_text:hover {
+    filter: brightness(150%);
+}
+/*Makes the site to adapt to smaller screen. Changes the grid to have only one column*/
+@media (max-width: 1000px) and (min-width: 599px) {
+    .top {
+        grid-template-columns: 1fr;
+        grid-template-areas: "text"
+    }
+
+    .photo {
+        max-width: 263px;
+        max-height: 263px;
+        position: fixed;
+        top: 100px;
+        left: 50px;
+    }
+    .navigation {
+        position: fixed;
+        left: 25vh;
+    }
+    .text {
+        position: fixed;
+        transform: scale(.8);
+        top: 20vh;
+        left: 50vh;
+        text-align: center;
+    }
+}
+/*Makes an adaptation for even smaller screens*/
+@media (max-width: 600px) {
+    nav a {
+        font-size: 16px;
+    }
+
+    .top {
+        grid-template-columns: 1fr;
+        grid-template-areas: "text"
+    }
+    header {
+        position: fixed;
+        left: -15vh;
+        top: 0px;
+        height:150px;
+    }
+    .navigation
+    {
+        transform: scale(.8);
+        position: relative;
+        left: 20vh;
+        text-align: center;
+    }
+
+    .text {
+        transform: scale(.5);
+        position: fixed;
+        top: 28vh;
+        text-align: center;
+    }
+
+    .social {
+        flex-direction: column;
+    }
+    
+    .social_full:not(:first-child) {
+        margin-left: 0px;
+    }  
+
+    .photo {
+        max-width: 131px;
+        max-height: 131px;
+        position: fixed;
+        top: 20vh;
+        left: 19vh;
+        border-radius: 100%;
+    }
+   
+}

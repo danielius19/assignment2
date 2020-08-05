@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300,600,700|Work+Sans:300,400,600&display=swap');
+/* Created all the variables, that I will use in the code */
+:root {
+  --paragraph: #B4BFE3;
+  --title: #97A0BE;
+  --background: #373756;
+  --coverdark: rgba(55,55,86,.9);
+  --coverlight: rgba(55,55,86,.7);
+}
+/* Created the "global" rules for the page not to have any white borders*/
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	text-rendering:optimizeLegibility;
+}
+/*This doesn't let the navigation bar to reach sides of the page*/
+.navigation {
+	width: 80%;
+    margin: 0 auto;
+}
+/*Sets the background of the navigation bar*/
+header {
+  background: #373756;
+  height:40px;
+}
+/*Moves the navigation bar to the right*/
+nav {
+  float: right;
+}
+/*Deletes the empty space around listed items and dots before them*/
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/*Lists items in a row, while putting space in between them and from the top*/
+nav li {
+  display: inline-block;
+  margin-right: 200px;
+  padding-top: 15px;
+  position: relative;
+}
+/*Sets the font, color and the size of the text in nav section  */
+nav a {
+  color: #97A0BE;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+/*Makes the text change its colour in the nav section, when hovering on text*/
+nav a:hover {
+  color: #B4BFE3;
+}
+/*Creates a line above the text in the navigation bar*/
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #97A0BE;
+  position: relative;
+  bottom: 15px;
+  width: 0%;
+  transition: all ease-in-out 200ms;
+}
+/*Makes the line to only appear after hovering on a word in navigation*/
+nav a:hover::before {
+  width: 100%;
+}
+/*Sets the background of the body*/
+body {
+  color:#777;
+  background-color: var(--background);
+  background-image: linear-gradient(to right, var(--coverdark), var(--coverlight)), url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/*Sets rules for whole page class*/
+.page {
+	max-width:400px;
+	width:100%;
+	margin:0 auto;
+  	position:relative;
+  	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	font-weight:300;
+	font-size: 12px;
+	line-height:30px;
+}
+/*Sets font for input fields*/
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] { font:400 12px/16px "Open Sans", sans-serif; }
+/*Sets rules contact window*/
+#contact {
+	background:#F9F9F9;
+	padding:25px;
+	margin:50px 0;
+}
+/*Sets font settings for heading 3*/
+#contact h3 {
+	color: var(--background);
+	display: block;
+	font-size: 30px;
+	font-weight: 400;
+}
+/*Sets font settings for heading 4*/
+#contact h4 {
+	margin:5px 0 15px;
+	display:block;
+  font-size:13px;
+  color: black;
+}
+/*Settings for the input fields*/
+fieldset {
+	border: medium none !important;
+	margin: 0 0 10px;
+	min-width: 100%;
+	padding: 0;
+	width: 100%;
+}
+/*Sets font for input fields*/
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea {
+	width:100%;
+	border:1px solid #CCC;
+	background:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+}
+/*Sets rules for the text after hovering on the fields*/
+#contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact input[type="url"]:hover, #contact textarea:hover {
+	transition:border-color 0.3s ease-in-out;
+	border:1px solid #AAA;
+}
+/*Sets rules for the textarea*/
+#contact textarea {
+	height:100px;
+	max-width:100%;
+  	resize:none;
+}
+/*Rules for the submit button*/
+#contact button[type="submit"] {
+	cursor:pointer;
+	width:100%;
+	border:none;
+	background:var(--coverdark);
+	color:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+	font-size:15px;
+}
+/*Rules for submit button after hovering on it*/
+#contact button[type="submit"]:hover {
+	background:var(--coverlight);
+	transition:background-color 0.3s ease-in-out;
+}
+/*Rules for the button when it's clicked*/
+#contact button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+/*Creates borders for the fields*/
+#contact input:focus, #contact textarea:focus {
+	outline:0;
+	border:1px solid #999;
+}
+/*Media query for smaller screens*/
+@media screen and (max-width:600px) {
+
+	nav a {
+		font-size: 16px;
+		}
+	header {
+		height: 150px;
+		width:375px;
+	}
+	body {
+		max-width: max-content;
+	}
+	h1 {
+		position: relative;
+		text-align: center;
+		font-size: 25px;
+	}
+	
+	.navigation {
+		transform: scale(.8);
+		position: relative;
+		left: 8vh;
+		text-align: center;
+	  }
+	}
