@@ -45,6 +45,7 @@ nav a {
   text-transform: uppercase;
   font-size: 18px;
 }
+/*Creates a bar in which dark mode can be turned on*/
 .label {
     background-color: #111;
     display: flex;
@@ -58,7 +59,7 @@ nav a {
     left: 200vh;
     top: -14px;
 }
-
+/*Creates a white ball in the label for dark theme*/
 .ball {
     width: 26px;
     height: 26px;
@@ -67,22 +68,22 @@ nav a {
     position: absolute;
     transition: transform 0.1s linear;
 }
-
+/*Creates an invisible checkbox for the dark theme slider*/
 .checkbox {
     position: relative;
     left: 195vh;
     top: 10px;
     opacity: 0;
 }
-
+/*Slides the ball when you click on the label*/
 .checkbox:checked + .label .ball {
     transform: translateX(24px);
 }
-
+/*Sets the color of the moon icon*/
 .fa-moon {
     color: #f1c40f;
 }
-
+/*Sets the color of the sun icon*/
 .fa-sun {
     color: #f39c12;
 }
@@ -110,6 +111,7 @@ body {
     background: #B4BFE3;
     transition: background 0.2s linear;
 }
+/*Sets the color of the background when dark mode is on*/
 body.dark {
     background: #111;
 }
