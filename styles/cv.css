@@ -68,6 +68,52 @@ nav a::before {
 nav a:hover::before {
   width: 100%;
 }
+/*Creates a bar in which dark mode can be turned on*/
+.label {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  padding: 5px;
+  height: 35px;
+  width: 60px;
+  position: relative;
+  left: 200vh;
+  top: -14px;
+}
+/*Creates a white ball in the label for dark theme*/
+.ball {
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.1s linear;
+}
+/*Creates an invisible checkbox for the dark theme slider*/
+.checkbox {
+  position: relative;
+  left: 195vh;
+  top: 10px;
+  opacity: 0;
+}
+/*Slides the ball when you click on the label*/
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+/*Sets the color of the moon icon*/
+.fa-moon {
+  color: #f1c40f;
+}
+/*Sets the color of the sun icon*/
+.fa-sun {
+  color: #f39c12;
+}
+/*Sets the color of the background when dark mode is on*/
+body.dark {
+    background: #111;
+}
 /*Sets rules for the whole html page*/
 html {
   background-image: linear-gradient(to right, var(--coverdark), var(--coverlight)), url(../images/background.jpg);
@@ -83,7 +129,7 @@ div#resume {
   margin: 2.2rem;
   min-width: 310px;
   line-height: 24px;
-  color: #000
+  color: white;
 }
 /*Sets rules for the heading 1 in the resume */
 div#resume h1 {
