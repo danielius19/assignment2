@@ -203,6 +203,10 @@ hr {
         position: relative;
         bottom: 15vh;
     }
+    .label {
+        left: 36vh;
+        top: -155px;
+    }
     body {
         max-width: min-content;
     }

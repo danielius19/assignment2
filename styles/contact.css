@@ -218,6 +218,10 @@ fieldset {
 		height: 150px;
 		width:375px;
 	}
+	.label {
+        left: 35vh;
+        top: -155px;
+    }
 	body {
 		max-width: max-content;
 	}

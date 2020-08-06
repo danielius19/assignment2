@@ -228,6 +228,9 @@ div#resume img {
     display: block;
     margin-top: 2px
   }
+  .label {
+    left: 80vh;
+}
 }
 @media screen and (max-width:600px) {
   nav a {
@@ -236,6 +239,10 @@ div#resume img {
 header {
     height: 150px;
     width:375px;
+}
+.label {
+  left: 35vh;
+  top: -170px;
 }
 body {
     max-width: min-content;
