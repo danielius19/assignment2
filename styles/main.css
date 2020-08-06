@@ -211,6 +211,14 @@ h1 {
 i{
     font-size: 25px;
 }
+#git {
+    font-size: 30px;
+    color: var(--paragraph);
+}
+#linkedin {
+    font-size: 30px;
+    color: var(--paragraph);
+}
 /*Sets the font rules for the social links*/
 .social_text {
     font-family: "Open Sans", sans-serif;
