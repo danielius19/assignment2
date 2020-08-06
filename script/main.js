@@ -28,3 +28,7 @@ function changeLink(){
 changeLink();
 
 setInterval(changeLink, 2000);
+
+function displayDate() {
+    document.getElementById('showDateTime').innerHTML = Date();
+}
