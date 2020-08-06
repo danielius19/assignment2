@@ -229,7 +229,9 @@ i{
         grid-template-columns: 1fr;
         grid-template-areas: "text"
     }
-
+    .label {
+        left: 80vh;
+    }
     .photo {
         max-width: 263px;
         max-height: 263px;
@@ -272,7 +274,10 @@ i{
         left: 20vh;
         text-align: center;
     }
-
+    .label {
+        left: 50vh;
+        top: -150px;
+    }
     .text {
         transform: scale(.5);
         position: fixed;
